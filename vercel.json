@@ -2,9 +2,11 @@
   "buildCommand": "echo 'Static HTML - no build required'",
   "outputDirectory": ".",
   "rewrites": [
-    { "source": "/", "destination": "/morning/template.html" },
-    { "source": "/afternoon", "destination": "/afternoon/template.html" },
-    { "source": "/reddit", "destination": "/afternoon/template.html" },
-    { "source": "/(.*)", "destination": "/morning/template.html" }
+    { "source": "/", "destination": "/morning/2026-02-08.html" },
+    { "source": "/afternoon", "destination": "/afternoon/2026-02-08.html" },
+    { "source": "/reddit", "destination": "/afternoon/2026-02-08.html" },
+    { "source": "/morning/(.*)", "destination": "/morning/$1" },
+    { "source": "/afternoon/(.*)", "destination": "/afternoon/$1" },
+    { "source": "/(.*)", "destination": "/morning/2026-02-08.html" }
   ]
 }
