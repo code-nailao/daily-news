@@ -2,9 +2,9 @@
   "buildCommand": "echo 'Static HTML - no build required'",
   "outputDirectory": ".",
   "rewrites": [
-    { "source": "/", "destination": "/ai-daily-digest.html" },
+    { "source": "/", "destination": "/morning/morning-daily-digest.template.html" },
     { "source": "/afternoon", "destination": "/afternoon/index.html" },
     { "source": "/reddit", "destination": "/afternoon/index.html" },
-    { "source": "/(.*)", "destination": "/ai-daily-digest.html" }
+    { "source": "/(.*)", "destination": "/morning/morning-daily-digest.template.html" }
   ]
 }
