@@ -2,9 +2,9 @@
   "buildCommand": "echo 'Static HTML - no build required'",
   "outputDirectory": ".",
   "rewrites": [
-    { "source": "/", "destination": "/morning/morning-daily-digest.template.html" },
-    { "source": "/afternoon", "destination": "/afternoon/index.html" },
-    { "source": "/reddit", "destination": "/afternoon/index.html" },
-    { "source": "/(.*)", "destination": "/morning/morning-daily-digest.template.html" }
+    { "source": "/", "destination": "/morning/template.html" },
+    { "source": "/afternoon", "destination": "/afternoon/template.html" },
+    { "source": "/reddit", "destination": "/afternoon/template.html" },
+    { "source": "/(.*)", "destination": "/morning/template.html" }
   ]
 }
