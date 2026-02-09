@@ -170,3 +170,59 @@ npx vercel --token=$VERCEL_TOKEN --yes
 - ✅ Git author 权限正确后，Vercel CLI 部署成功
 - ✅ 部署 URL: workspace-c3gvpeaeo-toms-projects-f8f5147f.vercel.app
 - ✅ GitHub webhook 自动触发机制应该正常工作
+
+---
+
+# Vercel 账号切换记录（2026-02-09）
+
+## 新账号信息
+- **账号名**: yangshibos-projects
+- **Token**: a3NEa7dxUKp4LWmwHz30nwXG（已配置）
+- **Team ID**: team_U7SfCXRT4WD85oilM0ulwQjk
+- **Project ID**: prj_ayMBNqKewM2d1vLEhQq7WawtsXwh
+- **预览 URL**: https://workspace-6fqpw68bp-yangshibos-projects.vercel.app
+
+## 切换步骤
+1. ✅ 删除旧的 `.vercel` 目录
+2. ✅ 使用新 token 重新部署：`npx vercel --token=a3NEa7dxUKp4LWmwHz30nwXG --yes`
+3. ✅ 项目自动链接到新账号
+
+## Git Author 配置
+- **邮箱**: yangshibo1026@qq.com
+- **用户名**: yangshibo
+- 个人版 Hobby 账号**不限制 Git 作者邮箱**，任何邮箱都可以正常部署
+
+## 重要提醒
+- **旧账号**：`tom's projects`（团队版，有 Git 作者邮箱限制）
+- **新账号**：`yangshibos-projects`（个人版，无 Git 作者邮箱限制）
+- 切换后不再有 Git author 权限问题
+
+---
+
+# 早报失败原因与修复（2026-02-09）
+
+## 失败原因
+1. **浏览器工具无法自动执行**
+   - cron 任务中的 `browser()` 工具需要用户交互
+   - 自动执行时无法点击 Chrome 扩展图标
+   - 导致任务卡住无法完成
+
+2. **量子位网站限制**
+   - 直接 curl 访问返回 `403 Forbidden`
+   - web_fetch 也被阻止
+
+## 修复方案
+1. **Hacker News**:
+   - 使用 `curl --proxy http://127.0.0.1:7897` ✅ 已验证
+
+2. **量子位**:
+   - 使用 Serper 搜索 API ✅ 已验证
+   ```bash
+   curl -X POST "https://google.serper.dev/search" \
+     -H "Content-Type: application/json" \
+     -d '{"q": "site:qbitai.com AI news", "apiKey": "2c3135ef3a506a7e7cb53d0fb343bbe7921d2ff7"}'
+   ```
+
+3. **cron 任务已更新**:
+   - 移除了 browser 工具调用
+   - 改为 curl + Serper API 获取新闻
