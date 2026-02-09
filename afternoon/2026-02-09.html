@@ -6,9 +6,6 @@
     <meta name="format-detection" content="telephone=no">
     <title>午后茶话会 | Daily Digest</title>
     <style>
-        /* ========================================
-           Apple-Inspired Minimal Design System
-           ======================================== */
         :root {
             --apple-black: #000000;
             --apple-white: #FFFFFF;
@@ -405,29 +402,33 @@
             { votes: 450, comments: 89, title: "We Build Software for Humans — Not for Machines", summary: "深度探讨 AI 编程工具对软件开发本质的影响，过度依赖 AI 的反思。", link: "https://news.ycombinator.com/item?id=46945577" },
             { votes: 380, comments: 67, title: "Linux 7.0 Officially Concluding the Rust Experiment", summary: "Linux 内核中 Rust 集成的里程碑回顾，是成功还是挑战？", link: "https://news.ycombinator.com/item?id=46945535" },
             { votes: 320, comments: 54, title: "Humans peak in midlife: Cognitive and personality perspective", summary: "科学研究表明人类在中年达到认知巅峰，重新定义职业发展。", link: "https://news.ycombinator.com/item?id=46945471" },
-            { votes: 280, comments: 45, title: "Adding Bits Beats AI Slop (2025)", summary: " Gwern 深度分析：人类创作与 AI 生成内容的质量差异。", link: "https://news.ycombinator.com/item?id=46945456" },
-            { votes: 240, comments: 38, title: "I Talk to Claude More Than Humans", summary: "开发者分享与 AI 对话的频率超过人类，探讨数字社交新常态。", link: "https://news.ycombinator.com/item?id=46945426" }
+            { votes: 280, comments: 45, title: "Adding Bits Beats AI Slop (2025)", summary: "Gwern 深度分析：人类创作与 AI 生成内容的质量差异。", link: "https://news.ycombinator.com/item?id=46945456" },
+            { votes: 240, comments: 38, title: "I Talk to Claude More Than Humans", summary: "开发者分享与 AI 对话的频率超过人类，探讨数字社交新常态。", link: "https://news.ycombinator.com/item?id=46945426" },
+            { votes: 210, comments: 34, title: "OCapN and Structural Authority in Agentic AI", summary: "AI Agent 系统中的结构化权限控制新范式。", link: "https://news.ycombinator.com/item?id=46945527" },
+            { votes: 180, comments: 28, title: "Token Smuggling: Non-Standard Encoding Bypass AI", summary: "Unicode 标准化如何打开 AI Token 注入攻击面。", link: "https://news.ycombinator.com/item?id=46945518" },
+            { votes: 150, comments: 22, title: "Show HN: Claude SaaS Starter", summary: "面向 Claude 流的 Next.js 启动模板。", link: "https://news.ycombinator.com/item?id=46945544" }
         ];
 
         const interestingData = [
-            { title: "Claude SaaS Starter – Next.js Boilerplate", summary: "面向 Claude 流的 Next.js 启动模板，AI 应用开发新范式。", observation: "AI SaaS 开发门槛降低。", link: "https://news.ycombinator.com/item?id=46945544" },
             { title: "SoundTime – Self-hosted P2P 音乐流媒体", summary: "去中心化音乐分享平台，用户拥有完全控制权。", observation: "隐私优先的音乐解决方案。", link: "https://news.ycombinator.com/item?id=46945440" },
             { title: "IDEcline: Coding Tools Become Second-class Citizens", summary: "IDE 在 AI 时代地位下降，命令行和 Agent 工具崛起。", observation: "开发者工具链的范式转移。", link: "https://news.ycombinator.com/item?id=46945439" },
-            { title: "Show HN: Free Startup Ideas with Validation", summary: "免费创业想法库，每个想法附带验证笔记。", observation: "创业者值得参考的灵感来源。", link: "https://news.ycombinator.com/item?id=46945551" },
-            { title: "Ernie 5.0 Technical Report", summary: "百度 Ernie 5.0 技术报告发布，国产大模型新进展。", observation: "中国 AI 竞争加剧。", link: "https://news.ycombinator.com/item?id=46945446" }
+            { title: "Show HN: Free Startup Ideas with Validation", summary: "免费创业想法库，每个想法附带验证笔记。", observation: "精益创业方法论的自动化。", link: "https://news.ycombinator.com/item?id=46945551" },
+            { title: "Ernie 5.0 Technical Report", summary: "百度 Ernie 5.0 技术报告发布，国产大模型新进展。", observation: "中国 AI 竞争加剧。", link: "https://news.ycombinator.com/item?id=46945446" },
+            { title: "Why Coinbase, Pinterest Chose StarRocks", summary: "多家知名公司选择 StarRocks 作为数据仓库的原因分析。", observation: "实时数据分析平台的技术选型参考。", link: "https://news.ycombinator.com/item?id=46945458" },
+            { title: "Show HN: Multi-GPU PyTorch Stragglers Detection", summary: "多 GPU 训练中的性能瓶颈检测工具。", observation: "大模型训练优化工具。", link: "https://news.ycombinator.com/item?id=46945460" },
+            { title: "Buildjet Shuts Down", summary: "CI/CD 服务 Buildjet 宣布关闭。", observation: "开发者基础设施市场的洗牌。", link: "https://news.ycombinator.com/item?id=46945454" },
+            { title: "Pure Go Sub-second Fast STT", summary: "Go 语言实现的超快语音转文字工具。", observation: "端侧 STT 方案的新选择。", link: "https://news.ycombinator.com/item?id=46945516" }
         ];
 
         const painData = [
             { hot: 450, title: "AI 工具导致开发者思考能力退化", quote: "Software companies that went extreme into AI coding are not enjoying what they are getting.", observation: "AI 辅助 vs 独立思考的平衡点在哪里？", link: "https://news.ycombinator.com/item?id=46945577" },
-            { hot: 380, title: "Rust 在内核开发中的争议", quote: "Rust experiment in Linux 7.0 - success or challenge?", observation: "语言迁移的成本和收益。", link: "https://news.ycombinator.com/item?id=46945535" },
-            { hot: 320, title: "中年职业危机认知误区", quote: "Humans actually peak in midlife, contrary to popular belief.", observation: "重新规划职业路径的科学依据。", link: "https://news.ycombinator.com/item?id=46945471" },
-            { hot: 280, title: "AI 生成内容的质量困境", quote: "Adding Bits Beats AI Slop - human content quality matters more.", observation: "AI 辅助创作的质量边界。", link: "https://news.ycombinator.com/item?id=46945456" },
-            { hot: 240, title: "数字社交孤独感", quote: "Talking to Claude more than humans is becoming normal.", observation: "AI 伴侣 vs 人际关系的讨论。", link: "https://news.ycombinator.com/item?id=46945426" },
-            { hot: 210, title: "AI agent 管理平台缺失", quote: "Enterprise needs platforms to build, deploy, and manage AI agents.", observation: "B2B AI 基础设施是蓝海。", link: "https://news.ycombinator.com/item?id=46945439" },
-            { hot: 180, title: "开发者工具链碎片化", quote: "Most powerful coding tools became second-class citizens.", observation: "AI 时代开发者体验的重新设计。", link: "https://news.ycombinator.com/item?id=46945439" },
-            { hot: 150, title: "音乐版权的 P2P 解决方案", quote: "Self-hosted music streaming with P2P sharing.", observation: "去中心化内容分发的机会。", link: "https://news.ycombinator.com/item?id=46945440" },
-            { hot: 120, title: "创业想法验证工具需求", quote: "Free startup ideas with validation notes attached.", observation: "精益创业方法论的自动化。", link: "https://news.ycombinator.com/item?id=46945551" },
-            { hot: 100, title: "中国大模型国际竞争力", quote: "Ernie 5.0 shows China's AI advancement.", observation: "国产大模型的技术追赶。", link: "https://news.ycombinator.com/item?id=46945446" }
+            { hot: 380, title: "Rust 在内核开发中的争议", quote: "Linux 7.0 officially concluding the Rust experiment.", observation: "语言迁移的成本和长期维护挑战。", link: "https://news.ycombinator.com/item?id=46945535" },
+            { hot: 320, title: "中年职业危机认知误区", quote: "Humans actually peak in midlife, contrary to popular belief.", observation: "重新规划职业路径需要科学依据。", link: "https://news.ycombinator.com/item?id=46945471" },
+            { hot: 280, title: "AI 生成内容的质量困境", quote: "Adding Bits Beats AI Slop - human content quality matters more.", observation: "AI 辅助创作的质量边界和品牌一致性。", link: "https://news.ycombinator.com/item?id=46945456" },
+            { hot: 240, title: "数字社交孤独感", quote: "Talking to Claude more than humans is becoming normal.", observation: "AI 伴侣 vs 人际关系的边界管理。", link: "https://news.ycombinator.com/item?id=46945426" },
+            { hot: 210, title: "AI Agent 权限控制难题", quote: "OCapN and Structural Authority in Agentic AI systems.", observation: "企业级 Agent 平台的安全和权限设计。", link: "https://news.ycombinator.com/item?id=46945527" },
+            { hot: 180, title: "AI Token 注入攻击风险", quote: "Unicode normalization opens up massive attack surface.", observation: "AI 安全防护的新挑战。", link: "https://news.ycombinator.com/item?id=46945518" },
+            { hot: 150, title: "开发者工具链碎片化", quote: "Most powerful coding tools became second-class citizens.", observation: "AI 时代开发者体验的重新设计。", link: "https://news.ycombinator.com/item?id=46945439" }
         ];
 
         function createHotCard(item, index) {
