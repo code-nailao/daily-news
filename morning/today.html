@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>AI Daily | 2026-02-10 每日 AI 洞察</title>
+    <style>
+        :root {
+            --apple-black: #000000;
+            --apple-white: #FFFFFF;
+            --apple-gray-90: #1d1d1f;
+            --apple-gray-80: #3a3a3c;
+            --apple-gray-70: #636366;
+            --apple-gray-60: #86868b;
+            --apple-gray-50: #a1a1a6;
+            --apple-gray-40: #d1d1d6;
+            --apple-gray-30: #e5e5ea;
+            --apple-gray-20: #f2f2f7;
+            --apple-gray-10: #f5f5f7;
+            --accent-red: #FF3B30;
+            --accent-green: #34C759;
+            --accent-orange: #FF9500;
+            --accent-blue: #007AFF;
+            --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            --font-mono: 'SF Mono', 'Fira Code', monospace;
+            --space-xs: 6px;
+            --space-sm: 10px;
+            --space-md: 16px;
+            --space-lg: 24px;
+            --space-xl: 32px;
+            --space-2xl: 48px;
+            --space-3xl: 64px;
+            --radius-sm: 12px;
+            --radius-md: 16px;
+            --radius-lg: 20px;
+            --radius-xl: 24px;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: var(--font-sans);
+            background: var(--apple-gray-10);
+            color: var(--apple-black);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: var(--space-xl) var(--space-md);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+            padding: var(--space-xl) 0;
+        }
+        
+        .date-badge {
+            display: inline-block;
+            background: var(--apple-black);
+            color: var(--apple-white);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: var(--space-md);
+        }
+        
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--apple-black);
+            margin-bottom: var(--space-sm);
+            letter-spacing: -0.5px;
+        }
+        
+        .subtitle {
+            font-size: 17px;
+            color: var(--apple-gray-60);
+        }
+        
+        .section {
+            margin-bottom: var(--space-2xl);
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-sm);
+            border-bottom: 1px solid var(--apple-gray-30);
+        }
+        
+        .section-icon {
+            font-size: 20px;
+        }
+        
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--apple-black);
+        }
+        
+        .news-card {
+            background: var(--apple-white);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            margin-bottom: var(--space-sm);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        
+        .news-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-1px);
+        }
+        
+        .news-card a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-xs);
+        }
+        
+        .card-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--apple-black);
+            line-height: 1.4;
+            flex: 1;
+        }
+        
+        .card-title:hover {
+            color: var(--accent-blue);
+        }
+        
+        .card-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-size: 12px;
+            color: var(--apple-gray-60);
+        }
+        
+        .source-tag {
+            background: var(--apple-gray-20);
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+        
+        .points {
+            color: var(--accent-orange);
+            font-weight: 600;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: var(--space-xl) 0;
+            color: var(--apple-gray-60);
+            font-size: 13px;
+        }
+        
+        .footer a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .divider {
+            height: 1px;
+            background: var(--apple-gray-30);
+            margin: var(--space-xl) 0;
+        }
+        
+        .news-snippet {
+            font-size: 13px;
+            color: var(--apple-gray-70);
+            margin-top: var(--space-xs);
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 480px) {
+            h1 { font-size: 28px; }
+            .container { padding: var(--space-lg) var(--space-sm); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="date-badge">2026-02-10</span>
+            <h1>📰 AI Daily</h1>
+            <p class="subtitle">每日 AI 洞察 · 每日两次更新</p>
+        </header>
+
+        <section class="section">
+            <div class="section-header">
+                <span class="section-icon">🌍</span>
+                <h2>全球科技动态</h2>
+            </div>
+            
+            <div class="news-card">
+                <a href="https://www.reuters.com/commentary/breakingviews/ai-job-angst-is-everywhere-corner-office-2026-02-10/" target="_blank" rel="noopener">
+                    <div class="card-top">
+                        <span class="card-title">AI job angst is everywhere but the corner office</span>
+                    </div>
+                    <div class="card-meta">
+                        <span class="source-tag">Reuters</span>
+                    </div>
+                    <div class="news-snippet">Artificial intelligence job losses loom over white-collar sectors. Yet investors are piling into offices and accepting super-low yields...</div>
+                </a>
+            </div>
+            
+            <div class="news-card">
+                <a href="https://www.fool.com/investing/2026/02/10/why-artificial-intelligence-ai-adoption-is-acceler/" target="_blank" rel="noopener">
+                    <div class="card-top">
+                        <span class="card-title">Why Artificial Intelligence (AI) Adoption Is Accelerating Faster Than Expected</span>
+                    </div>
+                    <div class="card-meta">
+                        <span class="source-tag">The Motley Fool</span>
+                    </div>
+                    <div class="news-snippet">Some AI companies are blowing past analysts' consensus estimates -- and could continue to do so.</div>
+                </a>
+            </div>
+            
+            <div class="news-card">
+                <a href="https://www.euronews.com/next/2026/02/10/elon-musks-space-data-centre-plans-could-see-spacex-monopoly-on-ai-and-computing-experts-w" target="_blank" rel="noopener">
+                    <div class="card-top">
+                        <span class="card-title">Elon Musk's space data centre plans could see SpaceX monopoly on AI and computing</span>
+                    </div>
+                    <div class="card-meta">
+                        <span class="source-tag">Euronews</span>
+                    </div>
+                    <div class="news-snippet">The next frontier in the global artificial intelligence (AI) race and cloud computing may not be on Earth.</div>
+                </a>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <span class="section-icon">🇨🇳</span>
+                <h2>中国 AI 动态</h2>
+            </div>
+            
+            <div class="news-card">
+                <a href="https://www.bloomberg.com/news/articles/2026-02-10/china-s-latest-ai-stars-minimax-zhipu-jump-on-jpmorgan-buy-call" target="_blank" rel="noopener">
+                    <div class="card-top">
+                        <span class="card-title">JPMorgan Bullish Calls Spur Surge in a Pair of China AI Stocks</span>
+                    </div>
+                    <div class="card-meta">
+                        <span class="source-tag">Bloomberg</span>
+                    </div>
+                    <div class="news-snippet">MiniMax Group Inc. and Knowledge Atlas Technology JSC Ltd. surged in Hong Kong after JPMorgan Chase & Co. recommended investors buy the stocks.</div>
+                </a>
+            </div>
+            
+            <div class="news-card">
+                <a href="https://www.cnbc.com/2026/02/10/softbank-group-corp-shares-surge-after-telecom-unit-lifts-outlook-arm-ai-chip.html" target="_blank" rel="noopener">
+                    <div class="card-top">
+                        <span class="card-title">SoftBank shares surge 10% after telecom unit lifts outlook, Arm strength bolsters AI narrative</span>
+                    </div>
+                    <div class="card-meta">
+                        <span class="source-tag">CNBC</span>
+                    </div>
+                    <div class="news-snippet">SoftBank Group Corp. shares surged 10% on Monday after its telecom unit raised its full-year profit outlook.</div>
+                </a>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="section">
+            <div class="section-header">
+                <span class="section-icon">🦅</span>
+                <h2>Hacker News 热议</h2>
+            </div>
+
+            <div class="news-card">
+                <a href="https://www.robinsloan.com/winter-garden/magic-circle/" target="_blank" rel="noopener">
+                    <div class="card-top">
+                        <span class="card-title">Flood Fill vs. The Magic Circle</span>
+                    </div>
+                    <div class="card-meta">
+                        <span class="source-tag">robinsloan.com</span>
+                        <span class="points">▲ 1</span>
+                        <span>by gyomu</span>
+                        <span>3 minutes ago</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="news-card">
+                <a href="https://github.com/leochiu-a/git-pr-ai" target="_blank" rel="noopener">
+                    <div class="card-top">
+                        <span class="card-title">Show HN: A CLI tool to automate Git workflows using AI agents</span>
+                    </div>
+                    <div class="card-meta">
+                        <span class="source-tag">github.com</span>
+                        <span class="points">▲ 1</span>
+                        <span>by leochiu-a</span>
+                        <span>6 minutes ago</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="news-card">
+                <a href="https://pickalready.com" target="_blank" rel="noopener">
+                    <div class="card-top">
+                        <span class="card-title">Use AI to find movies and TV shows on your streaming services</span>
+                    </div>
+                    <div class="card-meta">
+                        <span class="source-tag">pickalready.com</span>
+                        <span class="points">▲ 1</span>
+                        <span>by hudgeon</span>
+                        <span>7 minutes ago</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="news-card">
+                <a href="https://publish.obsidian.md/deontologician/Posts/Spec-driven+development+doesn%27t+work+if+you%27re+too+confused+to+write+the+spec" target="_blank" rel="noopener">
+                    <div class="card-top">
+                        <span class="card-title">Spec driven development doesn't work if you're too confused to write the spec</span>
+                    </div>
+                    <div class="card-meta">
+                        <span class="source-tag">publish.obsidian.md</span>
+                        <span class="points">▲ 1</span>
+                        <span>by habitue</span>
+                        <span>9 minutes ago</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="news-card">
+                <a href="https://50984e11.maruel-ca.pages.dev/post/genai-v0.1.0/" target="_blank" rel="noopener">
+                    <div class="card-top">
+                        <span class="card-title">GenAI Go SDK for AI</span>
+                    </div>
+                    <div class="card-meta">
+                        <span class="source-tag">maruel-ca.pages.dev</span>
+                        <span class="points">▲ 1</span>
+                        <span>by cpeterso</span>
+                        <span>11 minutes ago</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="news-card">
+                <a href="https://lukeattheroost.com" target="_blank" rel="noopener">
+                    <div class="card-top">
+                        <span class="card-title">Show HN: I built an AI-powered late-night call-in radio show from my RV</span>
+                    </div>
+                    <div class="card-meta">
+                        <span class="source-tag">lukeattheroost.com</span>
+                        <span class="points">▲ 1</span>
+                        <span>by lukemacneil</span>
+                        <span>13 minutes ago</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="news-card">
+                <a href="https://heart-mula.com" target="_blank" rel="noopener">
+                    <div class="card-top">
+                        <span class="card-title">HeartMuLa: Open-source music foundation model achieving commercial-grade quality</span>
+                    </div>
+                    <div class="card-meta">
+                        <span class="source-tag">heart-mula.com</span>
+                        <span class="points">▲ 1</span>
+                        <span>by hanruezz</span>
+                        <span>14 minutes ago</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="news-card">
+                <a href="https://www.bedpage.com/" target="_blank" rel="noopener">
+                    <div class="card-top">
+                        <span class="card-title">Show HN: NetViews - macOS tool for network engineers</span>
+                    </div>
+                    <div class="card-meta">
+                        <span class="source-tag">bedpage.com</span>
+                        <span class="points">▲ 2</span>
+                        <span>by n1sni</span>
+                        <span>16 minutes ago</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="news-card">
+                <a href="https://productfit.substack.com/p/why-speech-to-speech-apis-fail-when" target="_blank" rel="noopener">
+                    <div class="card-top">
+                        <span class="card-title">We chose a pipeline over speech-to-speech for evaluative voice AI</span>
+                    </div>
+                    <div class="card-meta">
+                        <span class="source-tag">productfit.substack.com</span>
+                        <span class="points">▲ 1</span>
+                        <span>by niraj_kothawade</span>
+                        <span>16 minutes ago</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="news-card">
+                <a href="https://github.com/awneesh123/Blaze-mq" target="_blank" rel="noopener">
+                    <div class="card-top">
+                        <span class="card-title">Show HN: BlazeMQ – 52KB Kafka-compatible broker in C++20, zero dependencies</span>
+                    </div>
+                    <div class="card-meta">
+                        <span class="source-tag">github.com</span>
+                        <span class="points">▲ 1</span>
+                        <span>by awneeshtiwari</span>
+                        <span>16 minutes ago</span>
+                    </div>
+                </a>
+            </div>
+
+        </section>
+
+        <footer class="footer">
+            <p>📬 每天 08:00 & 20:00 自动更新</p>
+            <p style="margin-top: 8px;">
+                <a href="https://github.com/code-nailao/daily-news">GitHub</a> ·
+                <a href="https://daily-news-lf7trb7v5-yangshibos-projects.vercel.app">Vercel</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

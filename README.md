@@ -1,40 +1,46 @@
-# AI Daily Workspace
+# Daily News Repository
 
 每日 AI 新闻早报和午后 Reddit 洞察自动生成系统。
 
 ## Structure
 
 ```
-workspace/
+daily-news/
 ├── morning/
-│   ├── template.html          # 早报模板
-│   ├── 2026-02-08.html       # 当日早报
-│   └── old/
-│       └── 2026-02/          # 历史归档（按月份）
+│   ├── today.html          # 当日早报（每次覆盖）
+│   └── old/                # 历史归档
+│       └── YYYY-MM/       # 按月份归类
 ├── afternoon/
-│   ├── template.html         # 午后模板
-│   ├── 2026-02-08.html       # 当日午后
-│   └── old/
-│       └── 2026-02/          # 历史归档（按月份）
-├── backup_daily.sh           # 每日备份脚本
-└── vercel.json              # Vercel 路由配置
+│   ├── today.html         # 当日午后（每次覆盖）
+│   └── old/               # 历史归档
+│       └── YYYY-MM/       # 按月份归类
 ```
 
 ## URLs
 
 | Page | URL |
 |------|-----|
-| 📰 Morning | https://workspace-one-woad.vercel.app/ |
-| 🌤️ Afternoon | https://workspace-one-woad.vercel.app/afternoon |
+| 📰 Morning | https://daily-news.vercel.app/ |
+| 🌤️ Afternoon | https://daily-news.vercel.app/afternoon |
 
-## Workflow
+## Daily Workflow
 
-1. **每日运行**: `backup_daily.sh`
-2. 自动归档昨日文件到 `old/YYYY-MM/`
-3. 从模板生成当日文件
-4. Git 自动提交推送
-5. Vercel 自动部署
+1. **生成当日文件**: 运行 `daily-news.sh` 脚本
+2. **自动归档**: 脚本自动将昨日文件归档到 `old/YYYY-MM/`
+3. **Git 提交**: 自动提交并推送
+4. **Vercel 部署**: 自动部署更新
+
+## Files to Commit
+
+- `morning/today.html` - 当日早报
+- `afternoon/today.html` - 当日午后
+- `old/*` - 历史归档文件
+
+## Archives
+
+历史文件按月份归档在 `old/YYYY-MM/` 目录中，自动由脚本管理。
 
 ## Deploy
 
-自动部署到 Vercel（连接 GitHub 私有仓库 `code-nailao/workspace`）。
+自动部署到 Vercel，连接 GitHub 仓库 `code-nailao/daily-news`。
+
