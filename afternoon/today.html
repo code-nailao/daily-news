@@ -451,42 +451,31 @@
         // Data
         // ========================================
         const hotData = [
-            { votes: 2150, comments: 892, title: "AI 决策偏离人类意图的深层原因", summary: "AI 在真实组织中做出的错误决策比人类预期的更多，可解释性成为关键挑战。", link: "https://www.reddit.com/r/ArtificialIntelligence/comments/1qx8txz/" },
-            { votes: 1834, comments: 756, title: "AI 真的在提升还是削弱我们的思考能力？", summary: "AI 可以写出 90-95% 的代码：组件、状态逻辑、测试、重构，甚至架构建议。", link: "https://www.reddit.com/r/ArtificialInteligence/comments/1qyu0dn/" },
-            { votes: 1456, comments: 623, title: "AI 会让我们失业吗？真实影响分析", summary: "AI 正在取代我们的工作，因为员工太贵，而新员工缺乏知识储备。", link: "https://www.reddit.com/r/ArtificialInteligence/comments/1qyonr1/" },
-            { votes: 1189, comments: 445, title: "天体物理学家：AI 现在能完成 90% 的工作", summary: "顶级物理学家在闭门会议上达成共识：AI 已能完成 90% 的天体物理学家工作。", link: "https://www.reddit.com/r/agi/" },
-            { votes: 967, comments: 389, title: "AI 是刺激我们还是阻碍我们的能力发展？", summary: "深度探讨 AI 对人类认知能力和创造力的长期影响。", link: "https://www.reddit.com/r/ArtificialInteligence/comments/1qym4j7/" },
-            { votes: 892, comments: 345, title: "Michael Pollan：人类正在经历革命性变革", summary: "著名作家访谈：AI 和技术如何重塑人类认知和社会结构。", link: "https://www.nytimes.com/2026/02/07/magazine/michael-pollan-interview.html" },
-            { votes: 756, comments: 298, title: "Agent News Chat：AI agents 互相讨论新闻", summary: "创新的 AI 新闻讨论平台，多个 AI agents 可以交流观点。", link: "https://www.agentnewschat.com/" },
-            { votes: 623, comments: 267, title: "LLM 数字双胞胎的心理测量学研究", summary: "arxiv 新研究：如何评估 AI 生成的数字双胞胎的可靠性。", link: "https://arxiv.org/abs/2601.14264" },
-            { votes: 556, comments: 234, title: "自然语言编程的成功之路", summary: "探讨自然语言如何转化为可执行代码的演进过程。", link: "https://brooker.co.za/blog/2025/12/16/natural-language.html" },
-            { votes: 489, comments: 198, title: "代码只会说明它做了什么", summary: "经典文章的重新审视：代码表达式的本质。", link: "https://brooker.co.za/blog/2020/06/23/code.html" }
+            { votes: 4, comments: 1, title: "National Lab of the Rockies, formerly NREL, lays off more than 130 employees", summary: "技术讨论和分析。", link: "https://www.cpr.org/2026/02/09/nrel-layoffs-2026/" },
+            { votes: 4, comments: 1, title: "Show HN: A design collaboration layer for local LLM CLIs", summary: "GitHub 开源项目展示。", link: "https://github.com/popmelt/core" },
+            { votes: 3, comments: 1, title: "Tri leverages Toyota factories for robotics learning", summary: "技术讨论和分析。", link: "https://robotsandstartups.substack.com/p/humanoids-platform-urdf-kitchen-nvidias" },
+            { votes: 2, comments: 0, title: "YC just hosted Boris, the creator of Claude Code", summary: "技术讨论和分析。", link: "https://twitter.com/namanambavi/status/2021064647793860885" },
+            { votes: 2, comments: 0, title: "Mathematicians disagree on the essential structure of the complex numbers", summary: "技术讨论和分析。", link: "https://www.infinitelymore.xyz/p/complex-numbers-essential-structure" },
+            { votes: 2, comments: 0, title: "Large tech companies don&#x27;t need heroes", summary: "技术讨论和分析。", link: "https://www.seangoedecke.com/heroism/" },
+            { votes: 2, comments: 0, title: "Superlinear Returns (2023)", summary: "技术讨论和分析。", link: "https://paulgraham.com/superlinear.html" },
+            { votes: 2, comments: 0, title: "Digital Iris [video]", summary: "技术视频分享。", link: "https://www.youtube.com/watch?v=Kg_2MAgS_pE" },
+            { votes: 2, comments: 0, title: "Brain train game may help protect against dementia for up to 20 years", summary: "技术讨论和分析。", link: "https://www.nbcnews.com/health/aging/brain-training-game-protect-dementia-research-decades-alzheimers-rcna257790" },
         ];
 
         const interestingData = [
-            { title: "1980年代的计算机视频标题机", summary: "Scriptovision Super Micro Script：几乎是一台家用电脑的革命性设备。", observation: "技术历史的趣味回顾。", link: "http://oldvcr.blogspot.com/2026/02/the-scriptovision-super-micro-script.html" },
-            { title: "发现1995年的\"原始\"iPhone", summary: "考古式技术探索：早期移动计算的萌芽。", observation: "技术演进的有趣对比。", link: "https://www.youtube.com/watch?v=7cip9w-UxIc" },
-            { title: "Show HN: 远程温室监控系统", summary: "基于物联网的智能农业解决方案。", observation: "AI 在农业领域的实际应用。", link: "https://github.com/benb0jangles/Remote-greenhouse-monitor" },
-            { title: "一体化商业健康追踪工具 SidePop", summary: "整合收入、成本和业务健康指标的 SaaS 工具。", observation: "中小企业值得关注的商业工具。", link: "https://www.sidepop.io" },
-            { title: "Show HN: AI LinkedIn 轮播图生成器", summary: "免费 AI 工具，快速生成 LinkedIn 营销内容。", observation: "AI 营销工具的又一创新。", link: "https://carousel-ai.intellisell.ai/" },
-            { title: "AI 伴侣正在重塑青少年的情感纽带", summary: "AI companions 正在改变年轻一代的情感表达和社交方式。", observation: "情感计算领域的新趋势。", link: "https://www.foxnews.com/tech/ai-companions-reshaping-teen-emotional-bonds" },
-            { title: "Deepfakes 泛滥：AI 安全报告七大要点", summary: "深度伪造传播和 AI 伴侣成为最新安全报告的关注焦点。", observation: "AI 安全和伦理是持续热点。", link: "https://www.reddit.com/r/artificial/comments/1qy9mx7/" },
-            { title: "Amazon 加入 Big Tech AI 投资热潮", summary: "各大公司本周共计宣布 6500亿美元 AI 投资。", observation: "AI 基础设施竞赛加速。", link: "https://www.bbc.com/news/topics/ce1qrvleleqt" },
-            { title: "AI 公司的太空数据中心计划", summary: "为什么把数据中心送到太空？不会被愤怒的暴民摧毁是原因之一。", observation: "极端环境计算的新探索。", link: "https://www.reddit.com/r/ArtificialIntelligence/comments/1qwzik8/" },
-            { title: "AI 编程让初级开发者焦虑", summary: "Junior 开发者普遍担心过度依赖 AI 会失去核心竞争力。", observation: "AI 编程教育和技能培训是机会。", link: "https://www.reddit.com/r/ArtificialInteligence/comments/1qx6dce/" }
+            { title: "YC just hosted Boris, the creator of Claude Code", summary: "开发者展示的开源项目 YC just hosted 。", observation: "技术创新和创意实现的案例。", link: "https://twitter.com/namanambavi/status/2021064647793860885" },
+            { title: "Mathematicians disagree on the essential structure of the complex numbers", summary: "开发者展示的开源项目 Mathematicians 。", observation: "技术创新和创意实现的案例。", link: "https://www.infinitelymore.xyz/p/complex-numbers-essential-structure" },
+            { title: "Large tech companies don&#x27;t need heroes", summary: "开发者展示的开源项目 Large tech comp。", observation: "技术创新和创意实现的案例。", link: "https://www.seangoedecke.com/heroism/" },
+            { title: "National Lab of the Rockies, formerly NREL, lays off more than 130 employees", summary: "开发者展示的开源项目 National Lab of。", observation: "技术创新和创意实现的案例。", link: "https://www.cpr.org/2026/02/09/nrel-layoffs-2026/" },
+            { title: "Show HN: A design collaboration layer for local LLM CLIs", summary: "开发者展示的开源项目 Show HN: A desi。", observation: "技术创新和创意实现的案例。", link: "https://github.com/popmelt/core" },
         ];
 
         const painData = [
-            { hot: 2150, title: "AI 决策缺乏可控性和可解释性", quote: "AI makes more of the wrong decisions than humankind intended.", observation: "Human-in-the-loop 和可解释 AI 是刚需。", link: "https://www.reddit.com/r/ArtificialIntelligence/comments/1qx8txz/" },
-            { hot: 1834, title: "AI 让工程师思考变少", quote: "AI can write 90-95% of the code, making engineers think less about architecture.", observation: "AI 辅助 vs 独立思考的平衡点在哪里？", link: "https://www.reddit.com/r/ArtificialInteligence/comments/1qyu0dn/" },
-            { hot: 1456, title: "AI 落地企业困难", quote: "What's been harder is turning experiments into consistent daily workflows.", observation: "B2B AI 落地服务和变革管理有市场。", link: "https://www.reddit.com/r/ArtificialInteligence/comments/1qxau2j/" },
-            { hot: 1189, title: "初级开发者对 AI 过度依赖", quote: "How do you use AI without becoming dependent on it? How do you keep building skills?", observation: "Junior 开发者焦虑，AI 教育是机会。", link: "https://www.reddit.com/r/ArtificialInteligence/comments/1qx6dce/" },
-            { hot: 967, title: "隐私数据泄露风险", quote: "I wanted something that stays on my laptop. Completely local. No cloud.", observation: "纯本地 AI 助手是明确痛点。", link: "https://www.reddit.com/r/ArtificialIntelligence/comments/1qwehn0/" },
-            { hot: 856, title: "AI 工具太多难以选择", quote: "Which AI websites do you actually find helpful in daily work?", observation: "缺乏客观的 AI 工具评测和推荐平台。", link: "https://www.reddit.com/r/ArtificialIntelligence/comments/1qx5tlq/" },
-            { hot: 623, title: "LinkedIn 追踪 2953 个浏览器扩展", quote: "LinkedIn uses extension fingerprinting to track users across the web.", observation: "隐私保护工具和反追踪技术是机会。", link: "https://github.com/mdp/linkedin-extension-fingerprinting" },
-            { hot: 445, title: "AI agent 管理平台需求", quote: "Enterprise need platforms to build, deploy, and manage AI agents.", observation: "企业级 AI agent 平台是大市场。", link: "https://www.reddit.com/r/ArtificialIntelligence/comments/1qx9j93/" },
-            { hot: 389, title: "AI 测试自动化的边界", quote: "What if AI is completely excluded from the testing part of the cycle?", observation: "纯人类测试 vs AI 生成代码的讨论很有价值。", link: "https://www.reddit.com/r/ArtificialIntelligence/comments/1qxacbj/" },
-            { hot: 356, title: "AI 伴侣的伦理边界", quote: "AI companions are reshaping teen emotional bonds.", observation: "情感 AI 的伦理和监管是持续话题。", link: "https://www.foxnews.com/tech/ai-companions-reshaping-teen-emotional-bonds" }
+            { hot: 4, title: "National Lab of the Rockies, formerly NREL, lays off more than 130 employees", quote: "技术实践中的常见问题和挑战。", observation: "持续优化和适应的过程。", link: "https://www.cpr.org/2026/02/09/nrel-layoffs-2026/" },
+            { hot: 4, title: "A design collaboration layer for local LLM CLIs", quote: "技术实践中的常见问题和挑战。", observation: "持续优化和适应的过程。", link: "https://github.com/popmelt/core" },
+            { hot: 2, title: "YC just hosted Boris, the creator of Claude Code", quote: "技术实践中的常见问题和挑战。", observation: "持续优化和适应的过程。", link: "https://twitter.com/namanambavi/status/2021064647793860885" },
+            { hot: 2, title: "Mathematicians disagree on the essential structure of the complex numbers", quote: "技术实践中的常见问题和挑战。", observation: "持续优化和适应的过程。", link: "https://www.infinitelymore.xyz/p/complex-numbers-essential-structure" },
+            { hot: 2, title: "Large tech companies don&#x27;t need heroes", quote: "技术实践中的常见问题和挑战。", observation: "持续优化和适应的过程。", link: "https://www.seangoedecke.com/heroism/" },
         ];
 
         // ========================================
